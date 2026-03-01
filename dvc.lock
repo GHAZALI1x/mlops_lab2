@@ -10,15 +10,15 @@ stages:
     outs:
     - path: data/data_raw.csv
       hash: md5
-      md5: 013d0da08d6506664ce640459139176b
-      size: 3858
+      md5: 500a0acbd112b7c512929eac892f9864
+      size: 4009
   preprocess:
     cmd: python preprocess.py
     deps:
     - path: data/data_raw.csv
       hash: md5
-      md5: 013d0da08d6506664ce640459139176b
-      size: 3858
+      md5: 500a0acbd112b7c512929eac892f9864
+      size: 4009
     - path: preprocess.py
       hash: md5
       md5: 23c4c6e47c85392386a4c7770cbe10c4
@@ -26,19 +26,19 @@ stages:
     outs:
     - path: data/test.csv
       hash: md5
-      md5: 3f682525dc9e0b5203bd78f38ec4d54d
-      size: 598
+      md5: e8df820a82342b269c50f568b7eb4093
+      size: 629
     - path: data/train.csv
       hash: md5
-      md5: 5168e3bb381283c0934a53dcecdf83ba
-      size: 2200
+      md5: 2d7df5d9d3d5882e17a8b0fdaaafa0f4
+      size: 2320
   train:
     cmd: python train.py
     deps:
     - path: data/train.csv
       hash: md5
-      md5: 5168e3bb381283c0934a53dcecdf83ba
-      size: 2200
+      md5: 2d7df5d9d3d5882e17a8b0fdaaafa0f4
+      size: 2320
     - path: train.py
       hash: md5
       md5: 83430899fd663c4abbc7afdf9cc6c689
@@ -46,18 +46,18 @@ stages:
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: b42e181b62e7de749a84c30829d2f5f7
+      md5: ef277fcd2901dee93729431f4ec1e6f9
       size: 1295
   validate:
     cmd: python validate.py
     deps:
     - path: data/test.csv
       hash: md5
-      md5: 3f682525dc9e0b5203bd78f38ec4d54d
-      size: 598
+      md5: e8df820a82342b269c50f568b7eb4093
+      size: 629
     - path: models/model.pkl
       hash: md5
-      md5: b42e181b62e7de749a84c30829d2f5f7
+      md5: ef277fcd2901dee93729431f4ec1e6f9
       size: 1295
     - path: validate.py
       hash: md5
@@ -66,9 +66,9 @@ stages:
     outs:
     - path: confusion_matrix.png
       hash: md5
-      md5: ce4283af0a6d756b3f6b67836ba6f325
-      size: 40107
+      md5: 8500074b82c029f2739ff707649bfcb4
+      size: 36309
     - path: metrics.json
       hash: md5
-      md5: 28363cd0b4d502b836774bda56a00913
-      size: 92
+      md5: 9eb89a079f126638ec510f20fd48fc8b
+      size: 97
