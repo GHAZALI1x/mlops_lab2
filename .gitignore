@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+/data/data_raw.csv
+/data/train.csv
+/data/test.csv
+/models/
